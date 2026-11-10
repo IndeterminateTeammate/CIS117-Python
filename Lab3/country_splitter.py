@@ -1,13 +1,11 @@
-#CIS-117 Lab 3 
-#This program will read a file of country names and filter them by region, i.e. Europe, Asia, Africa, etc.
-#It will generate a new file for each region with the country names in that region. For example, Europe.CSV
-#will contain all the countries in Europe, Asia.CSV will contain all the countries in Asia, etc. Each regions
-#file will only contain the country names and region in each file.
-#Name: Sean Fay
-#Group: 9 
-#Lab Partner: Gislaine Pires
-#Partner Collaboration did not occur on this assignment. I did send a message through Canvas discussion 
-#thread, no response was received. 
+# CIS-117 Lab 3 
+# This program will read a file of country names and filter them by region, i.e. Europe, Asia, Africa, etc.
+# It will generate a new file for each region with the country names in that region. For example, Europe.CSV
+# will contain all the countries in Europe, Asia.CSV will contain all the countries in Asia, etc. Each regions
+# file will only contain the country names and region in each file.
+# Name: Sean Fay
+# Group: 9 
+# Lab Partner: Gislaine Pires
 
 
 import csv
@@ -18,7 +16,7 @@ import sys
 # .CSV read file function
 def read_country_data(input_path):
     """
-    Reads country_full.csv and returns a list of (country_name, region) tuples.
+    Reads country_full.csv and returns a list of tuples.
     Includes exception handling for file reading errors.
     """
     records = []
@@ -62,7 +60,7 @@ def read_country_data(input_path):
     return records
 
 
-# File writing funciton
+# File writing function
 def write_region_files(records, output_dir="."):
     """
     Groups records by region and generates one .CSV file per region.
@@ -102,6 +100,9 @@ def write_region_files(records, output_dir="."):
 # main method
 
 def main():
+    """
+    Main function to read the input .CSV and write region-specific .CSV files.
+    """
     # Designates the input file location and output directory for the region files
     input_path = "country_full.csv"
     output_dir = "."
